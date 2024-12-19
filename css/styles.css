@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Young+Serif&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--Poppins-font);
+}
+
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --White-color: hsl(0, 0%, 100%);
+
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+
+    --Poppins-font: "Poppins", sans-serif;
+}
+
+body{
+    background-color: var(--Very-Light-Gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--Grayish-Blue);
+    
+}
+
+.content-title{
+    font-weight: 200;
+}
+
+.content-subtitle{
+    font-weight: 600;
+}
+
+.main-content{
+    margin: 7.5rem auto;
+    padding: 0 3rem;
+    max-width: 32.813rem;
+    text-align: center;
+}
+
+.card{
+    margin: 0.75rem 8%;
+}
+
+.supervisor{
+    box-shadow: 0 1rem 2rem .5rem #dedede;
+    border-top: .5rem solid var(--Cyan);
+}
+
+.calculator{
+    box-shadow: 0 1rem 2rem .5rem #dedede;
+    border-top: .5rem solid var(--Blue);
+}
+
+.karma{
+    box-shadow: 0 1rem 2rem .5rem #dedede;
+    border-top: .5rem solid var(--Orange);
+}
+
+.team-builder{
+    box-shadow: 0 1rem 2rem .5rem #dedede;
+    border-top: .5rem solid var(--Red);
+}
+
+.supervisor, .team-builder, .karma, .calculator{
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.supervisor, .team-builder, .karma{
+    margin-block-end: 1.25rem;
+}
+
+img{
+    align-self: flex-end;
+}
+
+
+h2{
+    color: var(--Very-Dark-Blue);
+}
+
+footer{
+    position: static;
+    bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .main-content{
+        margin: 1.875rem 1.875rem;
+    }
+
+    .card{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "start mid1 end"
+        "start mid2 end";
+        gap: 3rem;
+    }
+
+    .supervisor{
+        grid-area: start;
+        align-self: center;
+    }
+
+    .team-builder{
+        grid-area: mid1;
+    }
+
+    .karma{
+        grid-area: mid2;
+    }
+
+    .calculator{
+        grid-area: end;
+        align-self: center;
+    }
+}
